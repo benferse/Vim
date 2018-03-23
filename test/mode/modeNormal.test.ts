@@ -1842,4 +1842,36 @@ suite('Mode Normal', () => {
     end: ['|'],
     endMode: ModeName.Normal,
   });
+
+  newTest({
+    title: 'Can do cae correctly',
+    start: ['one', 'two', 'thr|ee', 'four', 'five'],
+    keysPressed: 'cae',
+    end: ['|'],
+    endMode: ModeName.Insert,
+  });
+
+  newTest({
+    title: 'Can do cie correctly',
+    start: ['one', 'two', 'thr|ee', 'four', 'five'],
+    keysPressed: 'cie',
+    end: ['|'],
+    endMode: ModeName.Insert,
+  });
+
+  newTest({
+    title: 'Can do dae correctly',
+    start: ['one', 'two', 'thr|ee', 'four', 'five'],
+    keysPressed: 'dae',
+    end: ['|'],
+    endMode: ModeName.Normal,
+  });
+
+  newTest({
+    title: 'Can do die correctly',
+    start: ['one', 'two', 'thr|ee', 'four', 'five'],
+    keysPressed: 'die',
+    end: ['|'],
+    endMode: ModeName.Normal,
+  });
 });

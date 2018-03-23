@@ -595,3 +595,28 @@ class InsideIndentObjectBoth extends IndentObjectMatch {
   includeLineAbove = true;
   includeLineBelow = true;
 }
+
+/**
+ * This is a custom action based on vim-textobj-everything that selects the
+ * entire document. The inner version is identical in behavior, but is included
+ * for completeness.
+ */
+@RegisterAction
+export class SelectEverything extends TextObjectMovement {
+  keys = ['a', 'e'];
+
+  public async execAction(position: Position, vimState: VimState): Promise<IMovement> {
+    let start: Position = position.getDocumentBegin();
+    let stop: Position = position.getDocumentEnd();
+
+    return {
+      start: start,
+      stop: stop
+    };
+  }
+}
+
+@RegisterAction
+export class SelectInnerEverything extends SelectEverything {
+  keys = ['i', 'e'];
+}
